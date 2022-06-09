@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-from passwords import token
+#from passwords import token, postgres_password
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = token
+SECRET_KEY = 'django-insecure-8d6cm(0v4+35vd3f^0hpv%_b4id!!lnb+3f_1tkh#g84(=60f+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -32,12 +32,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'answers.apps.AnswersConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.postgres',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +78,12 @@ WSGI_APPLICATION = 'numiralogy.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'numirolog_bd',
+        'USER': 'atret',
+        'PASSWORD': 'fkbcf2018',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
