@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from gettext import gettext
 #from passwords import token, postgres_password
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -110,7 +111,10 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru'
+LANGUAGES = (
+    ('ru', gettext('ru')),
+)
 
 TIME_ZONE = 'UTC'
 
