@@ -57,3 +57,15 @@ class Services(models.Model):
         verbose_name = 'Услуга'
         verbose_name_plural = 'Услуги'
 
+
+class Uset(models.Model):
+    """Таблица пользователя"""
+    born_date = models.CharField(max_length=20, verbose_name='Дата рождения')
+    social_predictions = models.DecimalField(max_digits=50, decimal_places=0, default=0, verbose_name='Социальное предназначение')
+    spiritual_predictions = models.DecimalField(max_digits=50, decimal_places=0, default=0, verbose_name='Духовное предназначение')
+    personal_predictions = models.DecimalField(max_digits=50, decimal_places=0, default=0, verbose_name='Личное предназначение')
+
+    class Meta:
+        verbose_name = 'Калькулятор пользователя'
+        verbose_name_plural = 'Калькуляторы пользователей'
+

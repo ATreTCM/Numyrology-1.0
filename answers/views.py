@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 
-from .models import Social_predictions, Spiritual_predictions, Personal_predictions, Comments, Services
-from .forms import Pay_nailsForm
+from .models import Social_predictions, Spiritual_predictions, Personal_predictions, Comments, Services, Uset
+from .forms import UsetForm
 from .service import *
 
 
@@ -36,3 +36,20 @@ class Services_list(ListView):
     template_name = ''
     context_object_name = 'services'
     raise_exception = True
+
+
+def create_users_value(request):
+    """Расчет предназначения пользователя"""
+    if request.method == 'POST':
+        value_form = UsetForm(request.POST)
+        if value_form.is_valid():
+            new = value_form.save(commit=False)
+            new.social_predictions =
+            new.spiritual_predictions =
+            new.personal_predictions =
+            new.save()
+            return redirect('paymate:list')
+    else:
+        value_form = UsetForm()
+    return render(request, 'paymate/create.html', {'value_form': value_form})
+

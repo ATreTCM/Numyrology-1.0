@@ -48,7 +48,7 @@ birth_canal3 = cannels(str(recurring_event_channel + soul_lesson))
 birth_canal4 = cannels(str(manifestation_channel + soul_lesson))
 
 purpose_personal = cannels(
-    soul_lesson_valu(manifestation_channel, channel_of_intuition, recurring_event_channel, soul_lesson))
+soul_lesson_valu(manifestation_channel, channel_of_intuition, recurring_event_channel, soul_lesson))
 social_purpose = cannels(soul_lesson_valu(birth_canal1, birth_canal2, birth_canal3, birth_canal4))
 spiritual_purpose = cannels(str(purpose_personal + social_purpose))
 
