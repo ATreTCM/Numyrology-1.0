@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import DetailView, ListView
 
 from .models import Social_predictions, Spiritual_predictions, Personal_predictions, Comments, Services, Uset
@@ -44,9 +44,14 @@ def create_users_value(request):
         value_form = UsetForm(request.POST)
         if value_form.is_valid():
             new = value_form.save(commit=False)
-            new.social_predictions =
-            new.spiritual_predictions =
-            new.personal_predictions =
+            prediction = Cal_numirology(new)
+            prediction.channels()
+            prediction.soul_lessons()
+            prediction.birth_canal()
+            prediction.final_value()
+            new.personal_predictions = prediction.purpose_personal
+            new.social_predictions = prediction.social_purpose
+            new.spiritual_predictions = prediction.spiritual_purpose
             new.save()
             return redirect('paymate:list')
     else:

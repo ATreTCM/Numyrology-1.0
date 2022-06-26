@@ -1,56 +1,70 @@
-date = '24.12.2018'
+date = '28.05.1988'
 
 
-def user_date(date):
-    return date.split('.')
+class Cal_numirology:
+
+    def __init__(self, date):
+        self.date = date.split('.')
+        self.purpose_personal = 0
+        self.social_purpose = 0
+        self.spiritual_purpose = 0
+        self.manifestation_channel = 0
+        self.channel_of_intuition = 0
+        self.recurring_event_channel = 0
+        self.soul_lesson = 0
+        self.birth_canal1 = 0
+        self.birth_canal2 = 0
+        self.birth_canal3 = 0
+        self.birth_canal4 = 0
+
+    def cannels(self, num):
+        """"""
+        if int(num) > 22:
+            big_value = []
+            for i in num:
+                big_value.append(int(i))
+            return sum(big_value)
+        else:
+            return int(num)
+
+    def soul_lesson_value(self, *agrs):
+        """"""
+        soul_list = []
+        for i in agrs:
+            soul_list.append(i)
+        return str(sum(soul_list))
+
+    def channels(self):
+        self.manifestation_channel = self.cannels(self.date[0])
+        self.channel_of_intuition = self.cannels(self.date[1])
+        self.recurring_event_channel = self.cannels(self.date[2])
+
+    def soul_lessons(self):
+        self.soul_lesson = self.cannels(
+            self.soul_lesson_value(self.manifestation_channel, self.channel_of_intuition, self.recurring_event_channel))
+
+    def birth_canal(self):
+        self.birth_canal1 = self.cannels(str(self.manifestation_channel + self.channel_of_intuition))
+        self.birth_canal2 = self.cannels(str(self.channel_of_intuition + self.recurring_event_channel))
+        self.birth_canal3 = self.cannels(str(self.recurring_event_channel + self.soul_lesson))
+        self.birth_canal4 = self.cannels(str(self.manifestation_channel + self.soul_lesson))
+
+    def final_value(self):
+        self.purpose_personal = self.cannels(
+            self.soul_lesson_value(self.manifestation_channel, self.channel_of_intuition, self.recurring_event_channel,
+                                   self.soul_lesson))
+        self.social_purpose = self.cannels(
+            self.soul_lesson_value(self.birth_canal1, self.birth_canal2, self.birth_canal3, self.birth_canal4))
+        self.spiritual_purpose = self.cannels(str(self.purpose_personal + self.social_purpose))
 
 
-listy = user_date(date)
-
-
-def cannels(listy):
-    """"""
-    if int(listy) > 22:
-        big_value = []
-        for i in listy:
-            big_value.append(int(i))
-        return sum(big_value)
-    else:
-        return int(listy)
-
-
-def soul_lesson_value(manifestation_channel, channel_of_intuition, recurring_event_channel):
-    """"""
-    soul_list = []
-    soul_list.append(manifestation_channel)
-    soul_list.append(channel_of_intuition)
-    soul_list.append(recurring_event_channel)
-    return str(sum(soul_list))
-
-
-def soul_lesson_valu(a, b, c, d):
-    """"""
-    soul_list = []
-    soul_list.append(a)
-    soul_list.append(b)
-    soul_list.append(c)
-    soul_list.append(d)
-    return str(sum(soul_list))
-
-
-manifestation_channel = cannels(listy[0])
-channel_of_intuition = cannels(listy[1])
-recurring_event_channel = cannels(listy[2])
-soul_lesson = cannels(soul_lesson_value(manifestation_channel, channel_of_intuition, recurring_event_channel))
-birth_canal1 = cannels(str(manifestation_channel + channel_of_intuition))
-birth_canal2 = cannels(str(channel_of_intuition + recurring_event_channel))
-birth_canal3 = cannels(str(recurring_event_channel + soul_lesson))
-birth_canal4 = cannels(str(manifestation_channel + soul_lesson))
-
-purpose_personal = cannels(
-soul_lesson_valu(manifestation_channel, channel_of_intuition, recurring_event_channel, soul_lesson))
-social_purpose = cannels(soul_lesson_valu(birth_canal1, birth_canal2, birth_canal3, birth_canal4))
-spiritual_purpose = cannels(str(purpose_personal + social_purpose))
-
-print(purpose_personal, social_purpose, spiritual_purpose)
-print(birth_canal2)
+if __name__ == "__main__":
+    test = Cal_numirology(date)
+    test.channels()
+    test.soul_lessons()
+    test.birth_canal()
+    test.final_value()
+    print(test.date)
+    print(test.purpose_personal)
+    print(test.social_purpose)
+    print(test.spiritual_purpose)
