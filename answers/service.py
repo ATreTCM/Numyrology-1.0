@@ -1,7 +1,5 @@
-date = '28.05.1988'
-
-
 class Cal_numirology:
+    """Калькулятор нумиролога"""
 
     def __init__(self, date):
         self.date = date.split('.')
@@ -17,52 +15,55 @@ class Cal_numirology:
         self.birth_canal3 = 0
         self.birth_canal4 = 0
 
-    def cannels(self, num):
-        """"""
+    @staticmethod
+    def big_values(num):
+        """если число больше 22 то мы суммируем десятки и еденицы"""
         if int(num) > 22:
-            big_value = []
-            for i in num:
-                big_value.append(int(i))
+            big_value = [int(i) for i in num]
             return sum(big_value)
         else:
             return int(num)
 
-    def soul_lesson_value(self, *agrs):
-        """"""
-        soul_list = []
-        for i in agrs:
-            soul_list.append(i)
+    @staticmethod
+    def soul_lesson_value(*agrs):
+        """Сумма производного к-ва результатов методов"""
+        soul_list = [i for i in agrs]
         return str(sum(soul_list))
 
     def channels(self):
-        self.manifestation_channel = self.cannels(self.date[0])
-        self.channel_of_intuition = self.cannels(self.date[1])
-        self.recurring_event_channel = self.cannels(self.date[2])
+        """канналы"""
+        self.manifestation_channel = self.big_values(self.date[0])
+        self.channel_of_intuition = self.big_values(self.date[1])
+        self.recurring_event_channel = self.big_values(self.date[2])
 
     def soul_lessons(self):
-        self.soul_lesson = self.cannels(
+        """урок души"""
+        self.soul_lesson = self.big_values(
             self.soul_lesson_value(self.manifestation_channel, self.channel_of_intuition, self.recurring_event_channel))
 
     def birth_canal(self):
-        self.birth_canal1 = self.cannels(str(self.manifestation_channel + self.channel_of_intuition))
-        self.birth_canal2 = self.cannels(str(self.channel_of_intuition + self.recurring_event_channel))
-        self.birth_canal3 = self.cannels(str(self.recurring_event_channel + self.soul_lesson))
-        self.birth_canal4 = self.cannels(str(self.manifestation_channel + self.soul_lesson))
+        """каналы рождения"""
+        self.birth_canal1 = self.big_values(str(self.manifestation_channel + self.channel_of_intuition))
+        self.birth_canal2 = self.big_values(str(self.channel_of_intuition + self.recurring_event_channel))
+        self.birth_canal3 = self.big_values(str(self.recurring_event_channel + self.soul_lesson))
+        self.birth_canal4 = self.big_values(str(self.manifestation_channel + self.soul_lesson))
 
     def final_value(self):
-        self.purpose_personal = self.cannels(
+        """результат"""
+        self.channels()
+        self.soul_lessons()
+        self.birth_canal()
+        self.purpose_personal = self.big_values(
             self.soul_lesson_value(self.manifestation_channel, self.channel_of_intuition, self.recurring_event_channel,
                                    self.soul_lesson))
-        self.social_purpose = self.cannels(
+        self.social_purpose = self.big_values(
             self.soul_lesson_value(self.birth_canal1, self.birth_canal2, self.birth_canal3, self.birth_canal4))
-        self.spiritual_purpose = self.cannels(str(self.purpose_personal + self.social_purpose))
+        self.spiritual_purpose = self.big_values(str(self.purpose_personal + self.social_purpose))
 
 
 if __name__ == "__main__":
+    date = '28.05.1988'
     test = Cal_numirology(date)
-    test.channels()
-    test.soul_lessons()
-    test.birth_canal()
     test.final_value()
     print(test.date)
     print(test.purpose_personal)
