@@ -1,57 +1,55 @@
-from django.shortcuts import render, redirect
-from django.views.generic import DetailView, ListView
 
-from .models import Social_predictions, Spiritual_predictions, Personal_predictions, Comments, Services, Uset
-from .forms import UsetForm
+from django.shortcuts import render
+from django.views.generic import View
+
+from .models import Social_predictions, Spiritual_predictions, Personal_predictions, Comment, Service, Uset
 from .service import *
+ 
+class Users_value(View):
+    
+    template_name  = 'answers/index.html'
+    context = {}
+    
+    def get(self, request):
+        self.context['services'] = Service.objects.all()
+        self.context['comment'] = Comment.objects.all()
+        return render(request, self.template_name, self.context)
+       
+class Create_users_value(View):
+    
+    template_name = 'answers/modal.html'
+    context = {}
+    
+    def post(self, request):
+        users_value = request.POST
+        new = Uset() 
+        new.name = users_value['name-input']
+        new.born_date = users_value["data-input"]
+        prediction = Numirology(new.born_date)
+        prediction.template_method()
+        new.personal_predictions = prediction.purpose_personal
+        new.social_predictions = prediction.social_purpose
+        new.spiritual_predictions = prediction.spiritual_purpose
+        new.save()
+        
+        personal_answers = Personal_predictions.objects.get(purpose_personal=new.personal_predictions)
+        self.context['personalH'] = personal_answers.header
+        self.context['personalC'] = personal_answers.predictions_personal
+        self.context['name'] = new.name
+        self.context['date'] = new.born_date
+        self.context['purpose_personal'] = prediction.purpose_personal
+        self.context['social_purpose'] = prediction.social_purpose
+        self.context['spiritual_purpose'] = prediction.spiritual_purpose
+        self.context['manifestation_channel'] = prediction.manifestation_channel
+        self.context['channel_of_intuition'] = prediction.channel_of_intuition
+        self.context['recurring_event_channel'] = prediction.recurring_event_channel
+        self.context['soul_lesson'] = prediction.soul_lesson
+        self.context['birth_canal1'] = prediction.birth_canal1 
+        self.context['birth_canal2'] = prediction.birth_canal2 
+        self.context['birth_canal3'] = prediction.birth_canal3 
+        self.context['birth_canal4'] = prediction.birth_canal4 
 
+        return render(request, self.template_name, self.context)
 
-class Comments_detail(DetailView):
-    """Отзыв на услуги"""
-    model = Comments
-    template_name = 'answers/comment.html'
-    context_object_name = 'comment'
-    raise_exception = True
-
-
-class Service_detail(DetailView):
-    """Услуга и цена"""
-    model = Services
-    template_name = 'answers/service.html'
-    context_object_name = 'comment'
-    raise_exception = True
-
-
-class Comments_list(ListView):
-    """Список комментариев"""
-    model = Comments
-    template_name = 'answers/comments.html'
-    context_object_name = 'comments'
-    raise_exception = True
-
-
-class Services_list(ListView):
-    """Список услуг и цен"""
-    model = Services
-    template_name = 'answers/services.html'
-    context_object_name = 'services'
-    raise_exception = True
-
-
-def create_users_value(request):
-    """Расчет предназначения пользователя"""
-    if request.method == 'POST':
-        value_form = UsetForm(request.POST)
-        if value_form.is_valid():
-            new = value_form.save(commit=False)
-            prediction = Cal_numirology(new)
-            prediction.final_value()
-            new.personal_predictions = prediction.purpose_personal
-            new.social_predictions = prediction.social_purpose
-            new.spiritual_predictions = prediction.spiritual_purpose
-            new.save()
-            return redirect('numiralogy:index')
-    else:
-        value_form = UsetForm()
-    return render(request, 'answers/create.html', {'value_form': value_form})
-
+def error(request):
+    return render(request, 'answers/not_found.html')

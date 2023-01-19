@@ -72,21 +72,82 @@ if (menuLinks.length > 0) {
   }
 }
 
+// форма отправки
+
+/*  const matrixForm = document.getElementById('matrix-form');
+  const explanationModal = document.querySelector('#modal-explanation');
+
+  matrixForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const searchParams = new URLSearchParams();
+  
+    for (const pair of formData) {
+      searchParams.append(pair[0], pair[1], pair[2]);
+    }
+    console.log(searchParams);
+  
+    fetch('', {
+      method: 'post',
+      body: searchParams
+    }).then(function (response) {
+      return response.text();
+    }).then(function (text) {
+      if(text){
+        formElOpen();
+        matrixForm.reset();
+      };
+    }).catch(function (error) {
+      console.error(error);
+    })
+    
+    
+  });
+
+  function formElOpen() {
+    document.body.classList.add('_lock');
+    explanationModal.classList.add('modal-active');
+  }
+*/
 // модалка
 
-const formEl = document.querySelector('#matrix-container');
-const explanationModal = document.querySelector('#modal-explanation');
+//const formEl = document.querySelector('#matrix-form');
+//const explanationModal = document.querySelector('#modal-explanation');
 
-formEl.addEventListener('submit', function(event) {
-  event.preventDefault();
+//setTimeout(formElOpen, 400);
 
-  explanationModal.classList.add('modal-active');
-});
+/*function formElOpen() {
+    formEl.addEventListener('click', function(event) {
+    //event.preventDefault();
+    document.body.classList.add('_lock');
+    //explanationModal.classList.add('modal-active');
+  });*/
 
-const closeButtons = document.querySelectorAll('.modal-close-button');
+/*const closeButtons = document.querySelectorAll('.modal-close-button');
 
-closeButtons.forEach( function(closeBtn) {
-  closeBtn.addEventListener('click', function () {
+closeButtons.forEach(function(closeBtn) {
+  closeBtn.addEventListener('click', function() {
     explanationModal.classList.remove('modal-active');
+    document.body.classList.remove('_lock');
   });
 });
+
+const modalBgd = document.querySelector('.modal-bgd');
+
+modalBgd.addEventListener('click', (e) => {
+  if (e.target == modalBgd) {
+      modalBgd.classList.remove('modal-active');
+      document.body.classList.remove('_lock');
+  }
+});*/
+
+
+// Печать фрагмента
+
+/*const printObject = document.querySelector('.matrix-scroll');
+const printButton = document.querySelector('.modal-submit-button');
+
+printButton.addEventListener('click', (e) => {
+  print(printObject);
+})*/

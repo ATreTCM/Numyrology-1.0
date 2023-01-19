@@ -15,8 +15,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from .api import router
+from numiralogy import settings
+from django.conf.urls.i18n import i18n_patterns
+#from django.conf.urls import handler400, handler403, handler404, handler500
+
+
+'''handler400 = 'answers.views.handler404'
+handler403 = 'answers.views.handler404'
+handler404 = 'answers.views.handler404'
+handler500 = 'answers.views.handler404'''
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(' ', include('answers.urls', namespace='answer')),
-]
+    path('api/', include(router.urls)),
+   
+]+ i18n_patterns(
+    path('i18n/', include('django.conf.urls.i18n')),
+    path('', include('answers.urls', namespace='answer')),
+    prefix_default_language= False,  
+)
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

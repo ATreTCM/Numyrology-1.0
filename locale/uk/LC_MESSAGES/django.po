@@ -1,0 +1,179 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-13 18:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+
+#: answers/templates/answers/index.html:14
+#: answers/templates/answers/not_found.html:14
+msgid "Нумеролог Юлия"
+msgstr "Нумеролог Юлія"
+
+#: answers/templates/answers/index.html:33
+msgid "Главная"
+msgstr "Головна"
+
+#: answers/templates/answers/index.html:34
+msgid "Матрица"
+msgstr "Матриця"
+
+#: answers/templates/answers/index.html:35
+#: answers/templates/answers/index.html:118
+msgid "Услуги"
+msgstr "Послуги"
+
+#: answers/templates/answers/index.html:36
+#: answers/templates/answers/index.html:160
+msgid "Отзывы"
+msgstr "Відгуки"
+
+#: answers/templates/answers/index.html:37
+msgid "Сертификат"
+msgstr "Сертифікат"
+
+#: answers/templates/answers/index.html:74
+msgid "Привет,"
+msgstr "Привіт,"
+
+#: answers/templates/answers/index.html:74
+msgid "меня зовут Юлия"
+msgstr "мене звуть Юлія"
+
+#: answers/templates/answers/index.html:75
+msgid ""
+"Я нумеролог и сертифицированный специалист по методу самопознания личности "
+"Матрица судьбы"
+msgstr ""
+"Я нумеролог і сертифікований спеціаліст з методу самопізнання особистості по "
+"Матриці долі"
+
+#: answers/templates/answers/index.html:79
+msgid ""
+"Нумерология – это наука о связи чисел и человека. Мы рождаемся в "
+"определенный день - неслучайно. Твоя дата рождения, это личный код, где "
+"заложен твой потенциал, возможности и таланты. Твои уроки и задачи, которые "
+"необходимо решить на протяжении всей жизни. Не бывает такого, что у кого то, "
+"они есть, а у кого то нет. Они есть абсолютно у каждого."
+msgstr ""
+"Нумерологія – це наука про зв'язок чисел та людини. Ми народжуємось у певний "
+"день – не випадково. Твоя дата народження, це особистий код, де закладено "
+"твій потенціал, можливості та таланти. Твої уроки та ситуації, які необхідно "
+"вирішити протягом усього життя. Не буває такого, що в когось вони є, а в "
+"когось немає. Вони є абсолютно у кожного."
+
+#: answers/templates/answers/index.html:80
+msgid ""
+"Моя задача – показать человеку его энергии и помочь наладить гармоничные "
+"отношения с собой, родными и близкими."
+msgstr ""
+"Моє завдання – показати людині її енергії та допомогти збалансувати стосунки "
+"з собою, рідними та близькими."
+
+#: answers/templates/answers/index.html:89
+msgid "Матрица судьбы"
+msgstr "Матриця долі"
+
+#: answers/templates/answers/index.html:93
+msgid "Имя"
+msgstr "Імʼя"
+
+#: answers/templates/answers/index.html:94
+msgid "Введите имя"
+msgstr "Введіть імʼя"
+
+#: answers/templates/answers/index.html:95
+msgid "Дата рождения"
+msgstr "Дата народження"
+
+#: answers/templates/answers/index.html:96
+msgid "день.месяц.год"
+msgstr "день.місяць.рік"
+
+#: answers/templates/answers/index.html:98
+msgid "Предназначение"
+msgstr "Призначення"
+
+#: answers/templates/answers/index.html:104
+msgid ""
+"Здесь ты можешь узнать свое первое предназначение, в каком направлении "
+"необходимо двигаться в поисках себя."
+msgstr ""
+"Тут ти зможеш дізнатися своє перше призначення, в якому напрямку треба "
+"рухатися в пошуках себе."
+
+#: answers/templates/answers/index.html:130
+msgid "Как выглядит:"
+msgstr "Як виглядає"
+
+#: answers/templates/answers/index.html:131
+msgid "Стоимость:"
+msgstr "Вартість"
+
+#: answers/templates/answers/index.html:131
+msgid "грн."
+msgstr "грн."
+
+#: answers/templates/answers/index.html:150
+msgid ""
+"Если ты хочешь глубже познакомится с собой и начать менять свою жизнь, "
+"напиши мне в Direct Instagram или в любой мессенджер."
+msgstr ""
+"Якщо ти хочеш глибше познайомитись з собою і почати змінювати своє життя, "
+"напиши мені в Direct Instagram чи будь-який інший месенджер."
+
+#: answers/templates/answers/index.html:192
+msgid ""
+"Поделюсь с тобой отзывами благодарных клиентов. Очень рада, что у людей "
+"начались изменения в жизни."
+msgstr ""
+"Поділюсь з тобою відгуками вдячних клієнтів. Дуже рада, що у людей почались "
+"зміни у житті."
+
+#: answers/templates/answers/modal.html:17
+msgid "Имя:"
+msgstr "Імʼя:"
+
+#: answers/templates/answers/modal.html:18
+msgid "Дата:"
+msgstr "Дата:"
+
+#: answers/templates/answers/modal.html:735
+msgid "Открыть PDF"
+msgstr "Відкрити PDF"
+
+#: answers/templates/answers/not_found.html:20
+msgid "Ошибка"
+msgstr "Помилка"
+
+#: answers/templates/answers/not_found.html:21
+msgid "Кажется цифры не сложились сегодня,"
+msgstr "Здається цифри не склалися сьогодні,"
+
+#: answers/templates/answers/not_found.html:21
+msgid "попробуй вернуться в начало пути."
+msgstr "спробуй повернутися на початок шляху."
+
+#: answers/templates/answers/not_found.html:23
+msgid "На главную"
+msgstr "На головну"
+
+#: numiralogy/settings.py:119
+msgid "uk"
+msgstr "uk"

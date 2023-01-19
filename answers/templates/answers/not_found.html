@@ -1,0 +1,30 @@
+{% load static %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'answer/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'answer/css/media.css' %}">
+  <link rel="stylesheet" href="{% static 'answer/css/matrix.css' %}">
+  <link rel="stylesheet" href="{% static 'answer/css/itc-slider.css' %}">
+  <title>{% trans 'Нумеролог Юлия' %}</title>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="error-bg">
+      <div class="error-container">
+        <h1 class="heading-1">{% trans 'Ошибка' %}</h1>
+        <p>{% trans 'Кажется цифры не сложились сегодня,' %}<br/> {% trans 'попробуй вернуться в начало пути.' %}</p>
+        <a href="numerology.ulya" class="error-button">
+          <span class="error-button-title">{% trans 'На главную' %}</span>
+          <span class="error-button-icon"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
