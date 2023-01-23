@@ -2,7 +2,7 @@
 {% load i18n %}
 
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="{% static 'answer/css/media.css' %}">
   <link rel="stylesheet" href="{% static 'answer/css/matrix.css' %}">
   <link rel="stylesheet" href="{% static 'answer/css/itc-slider.css' %}">
-  <title>{% trans 'Нумеролог Юлия' %}</title>
+  <title>{% trans 'Нумеролог Юлія' %}</title>
 </head>
 <body>
   <div class="wrapper">
@@ -30,11 +30,11 @@
         </div>
         <nav class="menu-body">
           <ul class="menu-list">
-            <li><a data-goto=".page-section-1" href="#" class="menu-link">{% trans 'Главная' %}</a></li>
-            <li><a data-goto=".page-section-2" href="#" class="menu-link">{% trans 'Матрица' %}</a></li>
-            <li><a data-goto=".page-section-3" href="#" class="menu-link">{% trans 'Услуги' %}</a></li>
-            <li><a data-goto=".page-section-4" href="#" class="menu-link">{% trans 'Отзывы' %}</a></li>
-            <li><a data-goto=".page-section-5" href="#" class="menu-link">{% trans 'Сертификат' %}</a></li>
+            <li><a data-goto=".page-section-1" href="#" class="menu-link">{% trans 'Головна' %}</a></li>
+            <li><a data-goto=".page-section-2" href="#" class="menu-link">{% trans 'Матриця' %}</a></li>
+            <li><a data-goto=".page-section-3" href="#" class="menu-link">{% trans 'Послуги' %}</a></li>
+            <li><a data-goto=".page-section-4" href="#" class="menu-link">{% trans 'Відгуки' %}</a></li>
+            <li><a data-goto=".page-section-5" href="#" class="menu-link">{% trans 'Сертифікат' %}</a></li>
           </ul>
         </nav>
         <div class="messengers">
@@ -67,7 +67,7 @@
           <a class="icon" href="https://www.instagram.com/numerology_analysis/">
             <img src="{% static 'answer/img/icon/instagram.svg' %}" alt="Инстаграм">
           </a>
-          <a class="icon" href="https://msng.link/o/?380957126603=vi">
+          <a class="icon" href="viber://chat?number=+380957126603">
             <img src="{% static 'answer/img/icon/viber.svg' %}" alt="Вайбер">
           </a>
         </div>
@@ -86,13 +86,13 @@
               <img src="{% static 'answer/img/avatar_l.png' %}" alt="Фото нумеролога" class="image">
             </picture>
             <div class="headings">
-              <h1 class="heading-1">{% trans 'Привет,' %} <br/>{% trans 'меня зовут Юлия' %}</h1>
-              <h2 class="heading-2">{% trans 'Я нумеролог и сертифицированный специалист по методу самопознания личности Матрица судьбы' %}</h2>
+              <h1 class="heading-1">{% trans 'Привіт,' %} <br/>{% trans 'мене звуть Юлія' %}</h1>
+              <h2 class="heading-2">{% trans 'Я нумеролог і сертифікований спеціаліст з методу самопізнання особистості по Матриці долі' %}</h2>
             </div>
           </div>
           <div class="text">
-            <p>{% trans 'Нумерология – это наука о связи чисел и человека. Мы рождаемся в определенный день - неслучайно. Твоя дата рождения, это личный код, где заложен твой потенциал, возможности и таланты. Твои уроки и задачи, которые необходимо решить на протяжении всей жизни. Не бывает такого, что у кого то, они есть, а у кого то нет. Они есть абсолютно у каждого.' %}</p>
-            <p>{% trans 'Моя задача – показать человеку его энергии и помочь наладить гармоничные отношения с собой, родными и близкими.' %}</p>
+            <p>{% trans 'Нумерологія – це наука про звʼязок чисел та людини. Ми народжуємось у певний день – не випадково. Твоя дата народження, це особистий код, де закладено твій потенціал, можливості та таланти. Твої уроки та ситуації, які необхідно вирішити протягом усього життя. Не буває такого, що в когось вони є, а в когось немає. Вони є абсолютно у кожного.' %}</p>
+            <p>{% trans 'Моє завдання – показати людині її енергії та допомогти збалансувати стосунки з собою, рідними та близькими.' %}</p>
           </div>
         </div>
       </section>
@@ -101,22 +101,22 @@
       <!-- matrix section start -->
       <section class="page-section-2" id="page-section-2">
         <div class="matrix-bg">
-          <h1 class="heading-1">{% trans 'Матрица судьбы' %}</h1>
+          <h1 class="heading-1">{% trans 'Матриця долі' %}</h1>
           <div class="matrix-bg-star">
             <form action="modal" method="post" enctype="application/x-www-form-urlencoded" class="matrix-container example-print" id="matrix-form">{% csrf_token %}
               <div class="input-field">
-                <label for="name-input" class="heading-4">{% trans 'Имя' %}</label>
-                <input type="text" id="name-input" name="name-input" placeholder="{% trans 'Введите имя' %}" class="matrix-input" required>
-                <label for="data-input" class="heading-4">{% trans 'Дата рождения' %}</label>
-                <input type="date" id="data-input" name="data-input" placeholder="{% trans 'день.месяц.год' %}" class="matrix-input" required>
+                <label for="name-input" class="heading-4">{% trans 'Імʼя' %}</label>
+                <input type="text" id="name-input" name="name-input" placeholder="{% trans 'Введіть імʼя' %}" class="matrix-input" required>
+                <label for="data-input" class="heading-4">{% trans 'Дата народження' %}</label>
+                <input type="date" id="data-input" name="data-input" placeholder="{% trans 'день.місяць.рік' %}" class="matrix-input" required>
                 <button type="submit" name="button" class="matrix-button" id="matrix-cont">
-                  <span class="matrix-button-title">{% trans 'Предназначение' %}</span>
+                  <span class="matrix-button-title">{% trans 'Призначення' %}</span>
                   <span class="matrix-button-icon"></span>
                 </button>
               </div>
             </form>
             <div class="text">
-              <p>{% trans 'Здесь ты можешь узнать свое первое предназначение, в каком направлении необходимо двигаться в поисках себя.' %}</p>
+              <p>{% trans 'Тут ти зможеш дізнатися своє перше призначення, в якому напрямку треба рухатися в пошуках себе.' %}</p>
             </div>
           </div>
         </div>
@@ -130,7 +130,7 @@
       <!-- services section start -->
       <section class="page-section-3 example-screen">
         <div class="services-bg">
-          <h1 class="heading-1">{% trans 'Услуги' %}</h1>
+          <h1 class="heading-1">{% trans 'Послуги' %}</h1>
           <div class="services-bg-star">
             <div class="services-container">
               <div class="slider slider-1" data-slider="itc-slider">
@@ -142,8 +142,8 @@
                         <!-- Контент 1 слайда -->
                         <h2 class="heading-2">{{ ser.header }}</h2>
                         <div class="services-text">{{ ser.text|safe }}</div>
-                        <p class="services-text">{% trans 'Как выглядит:' %} {{ ser.like_view }}</p>
-                        <h2 class="heading-2">{% trans 'Стоимость:' %} {{ ser.price }} {% trans 'грн.' %}</h2>
+                        <p class="services-text">{% trans 'Як виглядає:' %} {{ ser.like_view }}</p>
+                        <h2 class="heading-2">{% trans 'Вартість:' %} {{ ser.price }} {% trans 'грн.' %}</h2>
                       </div> 
                     {% endfor %}
                    
@@ -162,7 +162,7 @@
               </div>
             </div>
             <div class="text">
-              <p>{% trans 'Если ты хочешь глубже познакомится с собой и начать менять свою жизнь, напиши мне в Direct Instagram или в любой мессенджер.' %}</p>
+              <p>{% trans 'Якщо ти хочеш глибше познайомитись з собою і почати змінювати своє життя, напиши мені в Direct Instagram чи будь-який інший месенджер.' %}</p>
             </div>
           </div>
         </div>
@@ -172,7 +172,7 @@
         <!-- reviews section start -->
         <section class="page-section-4 example-screen">
           <div class="reviews-bg">
-            <h1 class="heading-1">{% trans 'Отзывы' %}</h1>
+            <h1 class="heading-1">{% trans 'Відгуки' %}</h1>
             <div class="reviews-container">
               <div class="slider slider-2" data-slider="itc-slider">
                 <div class="slider__wrapper">
@@ -204,7 +204,7 @@
               </div>
             </div>
             <div class="text">
-              <p>{% trans 'Поделюсь с тобой отзывами благодарных клиентов. Очень рада, что у людей начались изменения в жизни.' %}</p>
+              <p>{% trans 'Поділюсь з тобою відгуками вдячних клієнтів. Дуже рада, що у людей почались зміни у житті.' %}</p>
             </div>
           </div>
         </section>
@@ -226,18 +226,18 @@
       <div class="footer-bg-star">
         <div class="footer">
           <div class="messengers">
-            <a class="icon" href="#">
+            <a class="icon" href="https://t.me/Julia_lysenko_BA">
               <img src="{% static 'answer/img/icon/telegram-color.svg' %}" alt="Телеграм">
             </a>
-            <a class="icon" href="#">
+            <a class="icon" href="https://www.instagram.com/numerology_analysis/">
               <img src="{% static 'answer/img/icon/instagram-color.svg' %}" alt="Инстаграм">
             </a>
-            <a class="icon" href="#">
+            <a class="icon" href="viber://chat?number=+380957126603">
               <img src="{% static 'answer/img/icon/viber-color.svg' %}" alt="Вайбер">
             </a>
           </div>
           <p class="footer-text">&copy; All rights reserved</p>
-          <a class="link-developer" href="#"><p class="footer-text">Designed and developed by T.team</p></a>
+          <a class="link-developer" href="https://www.linkedin.com/in/aleksey-tretyakov-7791101a9"><p class="footer-text">Designed and developed by T.team</p></a>
         </div>
       </div>
     </footer>

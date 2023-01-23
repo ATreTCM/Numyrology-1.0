@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from gettext import gettext
-#from passwords import token, postgres_password
+
+from .passwords import token, postgres_password
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8d6cm(0v4+35vd3f^0hpv%_b4id!!lnb+3f_1tkh#g84(=60f+'
+SECRET_KEY = token
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -85,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'numirolog_bd',
         'USER': 'atret',
-        'PASSWORD': 'fkbcf2018',
+        'PASSWORD': postgres_password,
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -114,9 +115,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'uk'
 LANGUAGES = (
-    ('ru', gettext('ru')),
+    ('uk', gettext('uk')),
 )
 
 TIME_ZONE = 'UTC'
@@ -126,15 +127,15 @@ USE_I18N = True
 USE_TZ = True
 
 LANGUAGES = [
-    ('ru', ('Russian')),
     ('uk', ('Ukraine')),
+    ('ru', ('Russian')),
 ]
 
 LOCALE_PATHS = [
     BASE_DIR / "locale"
 ]
 
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uk'
 TRANSLATABLE_MODEL_MODULES = ["answers.models"]
 
 
