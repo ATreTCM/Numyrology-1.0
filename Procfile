@@ -1,1 +1,0 @@
-web: pipenv run python scr/manage.py runserver $PORT 
