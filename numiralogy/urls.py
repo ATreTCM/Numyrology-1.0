@@ -34,7 +34,7 @@ urlpatterns = [
    
 ]+ i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
-    path('', include('answers.urls', namespace='answer')),
+    path('https://numerology-ulya.netlify.app', include('answers.urls', namespace='answer')),
     prefix_default_language= False,  
 )
 
