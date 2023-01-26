@@ -28,7 +28,7 @@ SECRET_KEY = token
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', 'netlify.app']
+ALLOWED_HOSTS = ['localhost', 'numerology-ulya.netlify.app']
 
 
 # Application definition
