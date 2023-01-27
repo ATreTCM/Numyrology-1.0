@@ -1,0 +1,1 @@
+web: gunicorn numiralogy.wsgi --log-file -
