@@ -30,7 +30,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', token)
 #DEBUG = True
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = ['localhost', 'numerology-ulya.netlify.app']
+ALLOWED_HOSTS = ['localhost', 'numerology-ulya.netlify.app', '127.0.0.1']
 
 
 # Application definition
